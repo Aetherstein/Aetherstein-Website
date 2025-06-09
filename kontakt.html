@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aetherstein – Der Ursprung der Magie</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 10px 0; text-align: center; z-index: 999;">
+  <a href="index.html" style="color: white; margin: 0 20px; text-decoration: none;">Home</a>
+  <a href="about.html" style="color: white; margin: 0 20px; text-decoration: none;">About</a>
+  <a href="kontakt.html" style="color: white; margin: 0 20px; text-decoration: none;">Kontakt</a>
+</nav>
+<div style="height: 50px;"></div> <!-- Abstand unter der Leiste -->
+
+    <div class="hero">
+        <img src="logo.jpg" alt="Aetherstein Logo" class="logo"/>
+        <h1>AETHERSTEIN</h1>
+        <p class="subtitle">Ein mystisches Reich voller Magie und Legenden</p>
+        <div class="buttons">
+            <a href="https://discord.gg/deinserver" class="btn">Discord beitreten</a>
+            <a href="minecraft://deinserver.de" class="btn">Minecraft Server beitreten</a>
+        </div>
+    </div>
+
+    <section class="lore">
+        <h2>Die Geschichte von Aetherstein</h2>
+        <p>Vor Äonen fiel ein Kristall vom Himmel – der Aetherstein. An der Stelle, wo er das Land berührte, begann Magie zu fließen. Aus einem einfachen Dorf wurde eine Festung der Zauberer, ein Zufluchtsort für Suchende, Abenteurer und jene, die das Unmögliche wagen wollten. 
+        <br><br>Der erste Hüter des Steins, einst nur ein Träumer mit Visionen, wurde zum Erbauer dieses Reiches. Heute lebt seine Idee weiter – in jedem Gebäude, in jedem Portal, das neue Welten öffnet.
+        <br><br>Doch dunkle Schatten regen sich erneut... Bist du bereit, dein Kapitel in dieser Legende zu schreiben?</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Aetherstein Serverprojekt</p>
+    </footer>
+
+    <!-- EINZIGES Glow-Element -->
+    <div id="cursor-glow" style="
+      position: fixed;
+      width: 35px;
+      height: 35px;
+      background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    "></div>
+
+    <!-- EINZIGES korrektes JS -->
+    <script>
+    document.addEventListener("mousemove", function(e) {
+      const glow = document.getElementById("cursor-glow");
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    });
+    </script>
+<main style='padding: 40px; color: white;'>
+<h1>Kontakt</h1>
+<p>Hier können Besucher dich erreichen.</p>
+</main>
+</body>
+</html>

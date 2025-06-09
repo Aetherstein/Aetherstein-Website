@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(to bottom, #0b0f14, #1e2025);
+    color: #d6cba4;
+    cursor: url('cursor.png'), auto;
+    overflow-x: hidden;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('parallax-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px cyan);
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 0 0 10px #000;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 10px;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #00bcd4;
+}
+
+.lore {
+    padding: 50px 20px;
+    background: #14171c;
+    text-align: center;
+}
+
+.lore h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.lore p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b0f14;
+    font-size: 0.9rem;
+}
+
+/* Mausglow-Effekt */
+#cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    z-index: 1000;
+}
+
+body:hover #cursor-glow {
+    animation: none;    
+}
+
+@keyframes glowMove {
+    0% { transform: translate(-50%, -50%); }
+}
+
+body {
+  cursor: url('cursor.png') 32 16, auto;
+}
