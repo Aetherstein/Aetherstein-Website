@@ -186,42 +186,8 @@
     "></div>
 
     <script>
-    // Beispiel-Daten (normalerweise würdest du diese aus einer JSON-Datei laden)
-    const teamData = {
-        owner: [
-            { name: "MasterMage", joinDate: "2023-01-15", discord: "MasterMage#1234" },
-            { name: "AetherKing", joinDate: "2023-02-01", discord: "AetherKing#5678" }
-        ],
-        admin: [
-            { name: "DragonSlayer", joinDate: "2023-03-10", discord: "DragonSlayer#9999" },
-            { name: "MysticGuard", joinDate: "2023-04-05", discord: "MysticGuard#1111" },
-            { name: "ShadowAdmin", joinDate: "2023-05-20", discord: "ShadowAdmin#2222" }
-        ],
-        developer: [
-            { name: "CodeWizard", joinDate: "2023-06-01", discord: "CodeWizard#3333" },
-            { name: "PluginMaster", joinDate: "2023-07-15", discord: "PluginMaster#4444" }
-        ],
-        builder: [
-            { name: "WorldCrafter", joinDate: "2023-08-01", discord: "WorldCrafter#5555" },
-            { name: "ArchitectPro", joinDate: "2023-09-10", discord: "ArchitectPro#6666" },
-            { name: "BuildMaster", joinDate: "2023-10-05", discord: "BuildMaster#7777" }
-        ],
-        moderator: [
-            { name: "ChatGuardian", joinDate: "2023-11-01", discord: "ChatGuardian#8888" },
-            { name: "PeaceKeeper", joinDate: "2023-12-15", discord: "PeaceKeeper#9000" }
-        ],
-        helper: [
-            { name: "FriendlyHelper", joinDate: "2024-01-01", discord: "FriendlyHelper#1010" },
-            { name: "NewbieFriend", joinDate: "2024-02-14", discord: "NewbieFriend#1212" }
-        ],
-        community_manager: [
-            { name: "EventOrganizer", joinDate: "2024-03-01", discord: "EventOrganizer#1313" }
-        ],
-        content_creator: [
-            { name: "VideoMaker", joinDate: "2024-04-01", discord: "VideoMaker#1414" },
-            { name: "ScreenshotPro", joinDate: "2024-05-01", discord: "ScreenshotPro#1515" }
-        ]
-    };
+    // Team-Daten werden aus JSON-Datei geladen
+    let teamData = {};
 
     // Cursor Glow Effect
     document.addEventListener("mousemove", function(e) {
@@ -230,24 +196,27 @@
         glow.style.top = e.clientY + "px";
     });
 
-    // Rank Card Click Events
+    // Rank Card Click Events - Jede Karte separat behandeln
     document.querySelectorAll('.rank-card').forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            e.stopPropagation(); // Verhindert Event-Bubbling
+            
             const rank = this.getAttribute('data-rank');
             const dropdown = this.querySelector('.member-dropdown');
             const arrow = this.querySelector('.dropdown-arrow');
             
             // Schließe alle anderen Dropdowns
-            document.querySelectorAll('.member-dropdown').forEach(otherDropdown => {
-                if (otherDropdown !== dropdown) {
+            document.querySelectorAll('.rank-card').forEach(otherCard => {
+                if (otherCard !== this) {
+                    const otherDropdown = otherCard.querySelector('.member-dropdown');
+                    const otherArrow = otherCard.querySelector('.dropdown-arrow');
                     otherDropdown.style.display = 'none';
-                    otherDropdown.parentElement.querySelector('.dropdown-arrow').innerHTML = '▼';
+                    otherArrow.innerHTML = '▼';
                 }
             });
             
             // Toggle current dropdown
             if (dropdown.style.display === 'none' || !dropdown.style.display) {
-                // Lade Teammitglieder für diesen Rank
                 loadTeamMembers(rank, dropdown);
                 dropdown.style.display = 'block';
                 arrow.innerHTML = '▲';
@@ -319,17 +288,37 @@
         });
     });
 
-    // Optional: Lade Daten aus einer externen JSON-Datei
-    // async function loadTeamDataFromFile() {
-    //     try {
-    //         const response = await fetch('team-data.json');
-    //         const data = await response.json();
-    //         Object.assign(teamData, data);
-    //     } catch (error) {
-    //         console.log('Konnte team-data.json nicht laden, verwende Beispieldaten');
-    //     }
-    // }
-    // loadTeamDataFromFile();
+    // Lade Teammitglieder-Daten aus JSON-Datei
+    async function loadTeamDataFromFile() {
+        try {
+            const response = await fetch('team-data.json');
+            if (!response.ok) {
+                throw new Error('JSON-Datei nicht gefunden');
+            }
+            teamData = await response.json();
+            console.log('Team-Daten erfolgreich geladen:', teamData);
+        } catch (error) {
+            console.error('Fehler beim Laden der team-data.json:', error);
+            // Fallback zu Beispieldaten wenn JSON nicht verfügbar
+            teamData = {
+                owner: [
+                    { name: "Beispiel Owner", joinDate: "2023-01-15", discord: "Owner#1234" }
+                ],
+                admin: [
+                    { name: "Beispiel Admin", joinDate: "2023-03-10", discord: "Admin#5678" }
+                ],
+                developer: [],
+                builder: [],
+                moderator: [],
+                helper: [],
+                community_manager: [],
+                content_creator: []
+            };
+        }
+    }
+    
+    // Lade Daten beim Seitenstart
+    loadTeamDataFromFile();
     </script>
 </body>
 </html>
