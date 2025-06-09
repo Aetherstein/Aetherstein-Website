@@ -293,55 +293,84 @@
         glow.style.top = e.clientY + "px";
     });
 
+    // Eindeutige IDs für jede Karte generieren und Dropdown-Handling verbessern
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gib jeder Karte eine eindeutige ID
+        document.querySelectorAll('.rank-card').forEach((card, index) => {
+            card.id = `rank-card-${index}`;
+        });
+    });
+
     // Alle Dropdowns schließen
     function closeAllDropdowns() {
         document.querySelectorAll('.rank-card').forEach(card => {
             const dropdown = card.querySelector('.member-dropdown');
             const arrow = card.querySelector('.dropdown-arrow');
-            dropdown.style.display = 'none';
-            arrow.innerHTML = '▼';
+            if (dropdown && arrow) {
+                dropdown.style.display = 'none';
+                arrow.innerHTML = '▼';
+                card.classList.remove('dropdown-open');
+            }
         });
     }
 
-    // Rank Card Click Events - Verbesserte Version
+    // Rank Card Click Events - KOMPLETT ÜBERARBEITET
     document.querySelectorAll('.rank-card').forEach(card => {
         card.addEventListener('click', function(e) {
+            // Verhindere Event-Bubbling
+            e.preventDefault();
             e.stopPropagation();
+            e.stopImmediatePropagation();
             
             const rank = this.getAttribute('data-rank');
             const dropdown = this.querySelector('.member-dropdown');
             const arrow = this.querySelector('.dropdown-arrow');
             
-            // Prüfen ob dieses Dropdown bereits offen ist
-            const isCurrentlyOpen = dropdown.style.display === 'block';
+            // Prüfen ob dieses spezifische Dropdown bereits offen ist
+            const isCurrentlyOpen = this.classList.contains('dropdown-open');
             
-            // Alle Dropdowns schließen
+            // ALLE Dropdowns schließen
             closeAllDropdowns();
             
-            // Falls das geklickte Dropdown nicht offen war, öffne es
-            if (!isCurrentlyOpen) {
+            // Falls das geklickte Dropdown nicht offen war, öffne nur dieses eine
+            if (!isCurrentlyOpen && dropdown && arrow) {
                 loadTeamMembers(rank, dropdown);
                 dropdown.style.display = 'block';
                 arrow.innerHTML = '▲';
+                this.classList.add('dropdown-open');
             }
+            
+            return false;
         });
 
         // Hover effects
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
-            this.style.boxShadow = '0 10px 30px rgba(0, 188, 212, 0.3)';
+            if (!this.classList.contains('dropdown-open')) {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 188, 212, 0.3)';
+            }
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = 'none';
+            if (!this.classList.contains('dropdown-open')) {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            }
         });
     });
 
     // Klick außerhalb schließt alle Dropdowns
     document.addEventListener('click', function(e) {
+        // Prüfe ob der Klick außerhalb aller rank-cards war
         if (!e.target.closest('.rank-card')) {
             closeAllDropdowns();
+        }
+    });
+
+    // Verhindere Dropdown-Schließung bei Klick auf Dropdown-Inhalt
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.member-dropdown')) {
+            e.stopPropagation();
         }
     });
 
