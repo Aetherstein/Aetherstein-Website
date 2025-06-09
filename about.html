@@ -6,174 +6,329 @@
     <title>Aetherstein – Der Ursprung der Magie</title>
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
-    <style>
-        /* Dropdown Basis */
-        nav {
-          position: fixed; 
-          top: 0; 
-          left: 0; 
-          width: 100%; 
-          background: rgba(0,0,0,0.8); 
-          padding: 10px 0; 
-          text-align: center; 
-          z-index: 999;
-        }
-
-        nav a, nav .dropbtn {
-          color: white; 
-          margin: 0 20px; 
-          text-decoration: none; 
-          font-family: 'Cinzel', serif;
-          cursor: pointer;
-          font-size: 1rem;
-          background: none;
-          border: none;
-          padding: 8px 16px;
-          border-radius: 8px;
-          transition: background-color 0.3s ease;
-        }
-        nav a:hover, nav .dropbtn:hover {
-          background-color: rgba(0,188,212,0.3);
-        }
-
-        .dropdown {
-          display: inline-block;
-          position: relative;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #14171c;
-          min-width: 160px;
-          border-radius: 8px;
-          box-shadow: 0 8px 16px rgba(0,188,212,0.3);
-          z-index: 1000;
-          left: 50%;
-          transform: translateX(-50%);
-          margin-top: 8px;
-        }
-
-        .dropdown-content a {
-          color: #d6cba4;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          font-family: 'Cinzel', serif;
-          font-size: 1rem;
-        }
-
-        .dropdown-content a:hover {
-          background-color: rgba(0, 188, 212, 0.5);
-          color: white;
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-    </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="kontakt.html">Kontakt</a>
-
-  <div class="dropdown">
-    <button class="dropbtn">Rank ▾</button>
-    <div class="dropdown-content">
-      <a href="#">Owner</a>
-      <a href="#">Admin</a>
-      <a href="#">Moderator</a>
-      <a href="#">Builder</a>
-      <a href="#">Developer</a>
-      <a href="#">Helper</a>
-      <a href="#">Community Manager</a>
-      <a href="#">Content Creator</a>
-    </div>
-  </div>
+<nav style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 10px 0; text-align: center; z-index: 999;">
+  <a href="index.html" style="color: white; margin: 0 20px; text-decoration: none;">Home</a>
+  <a href="about.html" style="color: white; margin: 0 20px; text-decoration: none;">About</a>
+  <a href="kontakt.html" style="color: white; margin: 0 20px; text-decoration: none;">Kontakt</a>
 </nav>
-<div style="height: 50px;"></div> <!-- Abstand unter der Leiste -->
+<div style="height: 50px;"></div>
 
-<div class="hero">
-    <img src="logo.jpg" alt="Aetherstein Logo" class="logo"/>
-    <h1>AETHERSTEIN</h1>
-    <p class="subtitle">Ein mystisches Reich voller Magie und Legenden</p>
-    <div class="buttons">
-        <a href="https://discord.gg/deinserver" class="btn">Discord beitreten</a>
-        <a href="minecraft://deinserver.de" class="btn">Minecraft Server beitreten</a>
+    <div class="hero">
+        <img src="logo.jpg" alt="Aetherstein Logo" class="logo"/>
+        <h1>AETHERSTEIN</h1>
+        <p class="subtitle">Ein mystisches Reich voller Magie und Legenden</p>
+        <div class="buttons">
+            <a href="https://discord.gg/deinserver" class="btn">Discord beitreten</a>
+            <a href="minecraft://deinserver.de" class="btn">Minecraft Server beitreten</a>
+        </div>
     </div>
-</div>
 
-<main style='padding: 40px; color: white; background: #14171c;'>
-    <div style="max-width: 1000px; margin: 0 auto;">
-        <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #d6cba4;">Über Uns</h1>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Lerne das Team hinter Aetherstein kennen - die Architekten dieser mystischen Welt</p>
-        
-        <!-- Website Entwickler Section -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="color: #00bcd4; font-size: 2rem; margin-bottom: 30px; text-align: center;">🌐 Website Entwickler</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: rgba(44, 62, 80, 0.3); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid rgba(0, 188, 212, 0.2);">
-                    <h3 style="color: #d6cba4; margin-bottom: 15px;">Lead Developer</h3>
-                    <p style="color: #a8a19e; margin-bottom: 10px;">Verantwortlich für die gesamte Website-Entwicklung</p>
-                    <div style="background: rgba(0, 188, 212, 0.1); padding: 10px; border-radius: 8px;">
-                        <strong style="color: #00bcd4;">Frontend & Backend Development</strong>
+    <main style='padding: 40px; color: white; background: #14171c;'>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #d6cba4;">Über Uns</h1>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Lerne das Team hinter Aetherstein kennen - die Architekten dieser mystischen Welt</p>
+            
+            <!-- Website Entwickler Section -->
+            <section style="margin-bottom: 60px;">
+                <h2 style="color: #00bcd4; font-size: 2rem; margin-bottom: 30px; text-align: center;">🌐 Website Entwickler</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div style="background: rgba(44, 62, 80, 0.3); padding: 30px; border-radius: 15px; text-align: center; border: 2px solid rgba(0, 188, 212, 0.2);">
+                        <h3 style="color: #d6cba4; margin-bottom: 15px;">Lead Developer</h3>
+                        <p style="color: #a8a19e; margin-bottom: 10px;">Verantwortlich für die gesamte Website-Entwicklung</p>
+                        <div style="background: rgba(0, 188, 212, 0.1); padding: 10px; border-radius: 8px;">
+                            <strong style="color: #00bcd4;">Frontend & Backend Development</strong>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Server Team Section -->
-        <section style="margin-bottom: 60px;">
-            <h2 style="color: #00bcd4; font-size: 2rem; margin-bottom: 30px; text-align: center;">⚔️ Server Team</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                
-                <!-- Owner -->
-                <div style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.3);">
-                    <h3 style="color: #ffd700; margin-bottom: 15px;">👑 Owner</h3>
-                    <p style="color: #d6cba4; margin-bottom: 15px;">Gründer und Leiter des Aetherstein Servers</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-                        <span style="background: rgba(255, 215, 0, 0.2); color: #ffd700; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Vollzugriff</span>
-                        <span style="background: rgba(255, 215, 0, 0.2); color: #ffd700; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Server-Management</span>
+            <!-- Server Team Section -->
+            <section style="margin-bottom: 60px;">
+                <h2 style="color: #00bcd4; font-size: 2rem; margin-bottom: 30px; text-align: center;">⚔️ Server Team</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                    
+                    <!-- Owner -->
+                    <div class="rank-card" data-rank="owner" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #ffd700; margin-bottom: 15px;">👑 Owner</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Gründer und Leiter des Aetherstein Servers</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(255, 215, 0, 0.2); color: #ffd700; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Vollzugriff</span>
+                            <span style="background: rgba(255, 215, 0, 0.2); color: #ffd700; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Server-Management</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #ffd700; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Admin -->
+                    <div class="rank-card" data-rank="admin" style="background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(178, 34, 34, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(220, 20, 60, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #dc143c; margin-bottom: 15px;">🛡️ Admin</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Verwaltung und Überwachung des Servers</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(220, 20, 60, 0.2); color: #dc143c; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Ban/Unban</span>
+                            <span style="background: rgba(220, 20, 60, 0.2); color: #dc143c; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Plugin-Verwaltung</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #dc143c; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Developer -->
+                    <div class="rank-card" data-rank="developer" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(75, 0, 130, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #8a2be2; margin-bottom: 15px;">💻 Developer</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Plugin-Entwicklung und technische Umsetzung</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(138, 43, 226, 0.2); color: #8a2be2; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Custom Plugins</span>
+                            <span style="background: rgba(138, 43, 226, 0.2); color: #8a2be2; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Bugfixes</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #8a2be2; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Builder -->
+                    <div class="rank-card" data-rank="builder" style="background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(0, 128, 0, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(34, 139, 34, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #228b22; margin-bottom: 15px;">🏗️ Builder</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Erschaffung der mystischen Welten</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(34, 139, 34, 0.2); color: #228b22; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">WorldEdit</span>
+                            <span style="background: rgba(34, 139, 34, 0.2); color: #228b22; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Architekt</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #228b22; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Moderator -->
+                    <div class="rank-card" data-rank="moderator" style="background: linear-gradient(135deg, rgba(30, 144, 255, 0.2), rgba(70, 130, 180, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(30, 144, 255, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #1e90ff; margin-bottom: 15px;">🛡️ Moderator</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Aufrechterhaltung von Ordnung und Frieden</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(30, 144, 255, 0.2); color: #1e90ff; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Chat-Moderation</span>
+                            <span style="background: rgba(30, 144, 255, 0.2); color: #1e90ff; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Kick/Mute</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #1e90ff; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Helper -->
+                    <div class="rank-card" data-rank="helper" style="background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 165, 0, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 140, 0, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #ff8c00; margin-bottom: 15px;">🤝 Helper</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Unterstützung für neue Abenteurer</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(255, 140, 0, 0.2); color: #ff8c00; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Spieler-Support</span>
+                            <span style="background: rgba(255, 140, 0, 0.2); color: #ff8c00; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Tutorials</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #ff8c00; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Community Manager -->
+                    <div class="rank-card" data-rank="community_manager" style="background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(199, 21, 133, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(255, 20, 147, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #ff1493; margin-bottom: 15px;">📢 Community Manager</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Verbindung zwischen Team und Community</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(255, 20, 147, 0.2); color: #ff1493; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Events</span>
+                            <span style="background: rgba(255, 20, 147, 0.2); color: #ff1493; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Discord</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #ff1493; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
+                    </div>
+
+                    <!-- Content Creator -->
+                    <div class="rank-card" data-rank="content_creator" style="background: linear-gradient(135deg, rgba(50, 205, 50, 0.2), rgba(60, 179, 113, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(50, 205, 50, 0.3); cursor: pointer; transition: all 0.3s ease;">
+                        <h3 style="color: #32cd32; margin-bottom: 15px;">🎥 Content Creator</h3>
+                        <p style="color: #d6cba4; margin-bottom: 15px;">Erstellt Inhalte und dokumentiert Abenteuer</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                            <span style="background: rgba(50, 205, 50, 0.2); color: #32cd32; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Videos</span>
+                            <span style="background: rgba(50, 205, 50, 0.2); color: #32cd32; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Screenshots</span>
+                        </div>
+                        <div class="dropdown-arrow" style="margin-top: 15px; color: #32cd32; font-size: 1.2rem;">▼</div>
+                        <div class="member-dropdown" style="display: none; margin-top: 20px; text-align: left;"></div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Admin -->
-                <div style="background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(178, 34, 34, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(220, 20, 60, 0.3);">
-                    <h3 style="color: #dc143c; margin-bottom: 15px;">🛡️ Admin</h3>
-                    <p style="color: #d6cba4; margin-bottom: 15px;">Verwaltung und Überwachung des Servers</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-                        <span style="background: rgba(220, 20, 60, 0.2); color: #dc143c; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Ban/Unban</span>
-                        <span style="background: rgba(220, 20, 60, 0.2); color: #dc143c; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Plugin-Verwaltung</span>
-                    </div>
+            <!-- Join Team Section -->
+            <section style="background: rgba(44, 62, 80, 0.2); padding: 40px; border-radius: 20px; text-align: center; border: 2px solid rgba(0, 188, 212, 0.3);">
+                <h2 style="color: #00bcd4; margin-bottom: 20px;">✨ Werde Teil unseres Teams!</h2>
+                <p style="color: #d6cba4; font-size: 1.1rem; margin-bottom: 30px;">
+                    Hast du Lust, bei der Entwicklung von Aetherstein mitzuwirken? Wir suchen immer nach talentierten und engagierten Spielern, 
+                    die unser Team verstärken möchten. Egal ob als Builder, Moderator oder in einer anderen Rolle - jeder kann seinen Beitrag leisten!
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="kontakt.html" style="display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #2c3e50, #00bcd4); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                        Team beitreten
+                    </a>
+                    <a href="https://discord.gg/deinserver" style="display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #7289da, #5865f2); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                        Discord Community
+                    </a>
                 </div>
+            </section>
+        </div>
+    </main>
 
-                <!-- Developer -->
-                <div style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(75, 0, 130, 0.1)); padding: 25px; border-radius: 15px; text-align: center; border: 2px solid rgba(138, 43, 226, 0.3);">
-                    <h3 style="color: #8a2be2; margin-bottom: 15px;">💻 Developer</h3>
-                    <p style="color: #d6cba4; margin-bottom: 15px;">Programmierung von Server-Plugins</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-                        <span style="background: rgba(138, 43, 226, 0.2); color: #8a2be2; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Plugin Entwicklung</span>
-                        <span style="background: rgba(138, 43, 226, 0.2); color: #8a2be2; padding: 5px 10px; border-radius: 12px; font-size: 0.9rem;">Bugfixes</span>
-                    </div>
-                </div>
+    <footer>
+        <p>© 2025 Aetherstein Serverprojekt</p>
+    </footer>
 
-                <!-- Weitere Team-Mitglieder ... -->
-            </div>
-        </section>
-    </div>
-</main>
+    <!-- Cursor Glow -->
+    <div id="cursor-glow" style="
+      position: fixed;
+      width: 35px;
+      height: 35px;
+      background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    "></div>
 
-<script>
-    // Cursor Glow Effekt
-    document.addEventListener('mousemove', function(e) {
-        const cursor = document.querySelector('.cursor');
-        if (!cursor) return;
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+    <script>
+    // Beispiel-Daten (normalerweise würdest du diese aus einer JSON-Datei laden)
+    const teamData = {
+        owner: [
+            { name: "MasterMage", joinDate: "2023-01-15", discord: "MasterMage#1234" },
+            { name: "AetherKing", joinDate: "2023-02-01", discord: "AetherKing#5678" }
+        ],
+        admin: [
+            { name: "DragonSlayer", joinDate: "2023-03-10", discord: "DragonSlayer#9999" },
+            { name: "MysticGuard", joinDate: "2023-04-05", discord: "MysticGuard#1111" },
+            { name: "ShadowAdmin", joinDate: "2023-05-20", discord: "ShadowAdmin#2222" }
+        ],
+        developer: [
+            { name: "CodeWizard", joinDate: "2023-06-01", discord: "CodeWizard#3333" },
+            { name: "PluginMaster", joinDate: "2023-07-15", discord: "PluginMaster#4444" }
+        ],
+        builder: [
+            { name: "WorldCrafter", joinDate: "2023-08-01", discord: "WorldCrafter#5555" },
+            { name: "ArchitectPro", joinDate: "2023-09-10", discord: "ArchitectPro#6666" },
+            { name: "BuildMaster", joinDate: "2023-10-05", discord: "BuildMaster#7777" }
+        ],
+        moderator: [
+            { name: "ChatGuardian", joinDate: "2023-11-01", discord: "ChatGuardian#8888" },
+            { name: "PeaceKeeper", joinDate: "2023-12-15", discord: "PeaceKeeper#9000" }
+        ],
+        helper: [
+            { name: "FriendlyHelper", joinDate: "2024-01-01", discord: "FriendlyHelper#1010" },
+            { name: "NewbieFriend", joinDate: "2024-02-14", discord: "NewbieFriend#1212" }
+        ],
+        community_manager: [
+            { name: "EventOrganizer", joinDate: "2024-03-01", discord: "EventOrganizer#1313" }
+        ],
+        content_creator: [
+            { name: "VideoMaker", joinDate: "2024-04-01", discord: "VideoMaker#1414" },
+            { name: "ScreenshotPro", joinDate: "2024-05-01", discord: "ScreenshotPro#1515" }
+        ]
+    };
+
+    // Cursor Glow Effect
+    document.addEventListener("mousemove", function(e) {
+        const glow = document.getElementById("cursor-glow");
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
     });
-</script>
+
+    // Rank Card Click Events
+    document.querySelectorAll('.rank-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const rank = this.getAttribute('data-rank');
+            const dropdown = this.querySelector('.member-dropdown');
+            const arrow = this.querySelector('.dropdown-arrow');
+            
+            // Schließe alle anderen Dropdowns
+            document.querySelectorAll('.member-dropdown').forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.style.display = 'none';
+                    otherDropdown.parentElement.querySelector('.dropdown-arrow').innerHTML = '▼';
+                }
+            });
+            
+            // Toggle current dropdown
+            if (dropdown.style.display === 'none' || !dropdown.style.display) {
+                // Lade Teammitglieder für diesen Rank
+                loadTeamMembers(rank, dropdown);
+                dropdown.style.display = 'block';
+                arrow.innerHTML = '▲';
+            } else {
+                dropdown.style.display = 'none';
+                arrow.innerHTML = '▼';
+            }
+        });
+
+        // Hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.boxShadow = '0 10px 30px rgba(0, 188, 212, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    });
+
+    // Funktion zum Laden der Teammitglieder
+    function loadTeamMembers(rank, dropdown) {
+        const members = teamData[rank] || [];
+        
+        if (members.length === 0) {
+            dropdown.innerHTML = '<p style="color: #a8a19e; text-align: center; padding: 10px;">Keine Mitglieder in diesem Rang</p>';
+            return;
+        }
+        
+        let html = '';
+        members.forEach(member => {
+            html += `
+                <div style="
+                    background: rgba(255, 255, 255, 0.05);
+                    margin: 10px 0;
+                    padding: 15px;
+                    border-radius: 10px;
+                    border-left: 4px solid rgba(0, 188, 212, 0.6);
+                    transition: all 0.3s ease;
+                " 
+                onmouseover="this.style.background='rgba(255, 255, 255, 0.1)'"
+                onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <strong style="color: #d6cba4; font-size: 1.1rem;">${member.name}</strong>
+                        <span style="color: #00bcd4; font-size: 0.9rem;">seit ${member.joinDate}</span>
+                    </div>
+                    <div style="color: #a8a19e; font-size: 0.9rem;">
+                        <span style="color: #7289da;">📱 ${member.discord}</span>
+                    </div>
+                </div>
+            `;
+        });
+        
+        dropdown.innerHTML = html;
+    }
+
+    // Button hover effects
+    const buttons = document.querySelectorAll('a[style*="linear-gradient"]');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.filter = 'brightness(1.1)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.filter = 'brightness(1)';
+        });
+    });
+
+    // Optional: Lade Daten aus einer externen JSON-Datei
+    // async function loadTeamDataFromFile() {
+    //     try {
+    //         const response = await fetch('team-data.json');
+    //         const data = await response.json();
+    //         Object.assign(teamData, data);
+    //     } catch (error) {
+    //         console.log('Konnte team-data.json nicht laden, verwende Beispieldaten');
+    //     }
+    // }
+    // loadTeamDataFromFile();
+    </script>
 </body>
 </html>
