@@ -1,0 +1,103 @@
+{
+  "owner": [
+    {
+      "name": "MasterMage",
+      "joinDate": "2023-01-15",
+      "discord": "MasterMage#1234"
+    },
+    {
+      "name": "AetherKing",
+      "joinDate": "2023-02-01",
+      "discord": "AetherKing#5678"
+    }
+  ],
+  "admin": [
+    {
+      "name": "DragonSlayer",
+      "joinDate": "2023-03-10",
+      "discord": "DragonSlayer#9999"
+    },
+    {
+      "name": "MysticGuard",
+      "joinDate": "2023-04-05",
+      "discord": "MysticGuard#1111"
+    },
+    {
+      "name": "ShadowAdmin",
+      "joinDate": "2023-05-20",
+      "discord": "ShadowAdmin#2222"
+    }
+  ],
+  "developer": [
+    {
+      "name": "CodeWizard",
+      "joinDate": "2023-06-01",
+      "discord": "CodeWizard#3333"
+    },
+    {
+      "name": "PluginMaster",
+      "joinDate": "2023-07-15",
+      "discord": "PluginMaster#4444"
+    }
+  ],
+  "builder": [
+    {
+      "name": "WorldCrafter",
+      "joinDate": "2023-08-01",
+      "discord": "WorldCrafter#5555"
+    },
+    {
+      "name": "ArchitectPro",
+      "joinDate": "2023-09-10",
+      "discord": "ArchitectPro#6666"
+    },
+    {
+      "name": "BuildMaster",
+      "joinDate": "2023-10-05",
+      "discord": "BuildMaster#7777"
+    }
+  ],
+  "moderator": [
+    {
+      "name": "ChatGuardian",
+      "joinDate": "2023-11-01",
+      "discord": "ChatGuardian#8888"
+    },
+    {
+      "name": "PeaceKeeper",
+      "joinDate": "2023-12-15",
+      "discord": "PeaceKeeper#9000"
+    }
+  ],
+  "helper": [
+    {
+      "name": "FriendlyHelper",
+      "joinDate": "2024-01-01",
+      "discord": "FriendlyHelper#1010"
+    },
+    {
+      "name": "NewbieFriend",
+      "joinDate": "2024-02-14",
+      "discord": "NewbieFriend#1212"
+    }
+  ],
+  "community_manager": [
+    {
+      "name": "EventOrganizer",
+      "joinDate": "2024-03-01",
+      "discord": "EventOrganizer#1313"
+    }
+  ],
+  "content_creator": [
+    {
+      "name": "VideoMaker",
+      "joinDate": "2024-04-01",
+      "discord": "VideoMaker#1414"
+    },
+    {
+      "name": "ScreenshotPro",
+      "joinDate": "2024-05-01",
+      "discord": "ScreenshotPro#1515"
+    }
+  ]
+}
