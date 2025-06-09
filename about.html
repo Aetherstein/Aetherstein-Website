@@ -186,8 +186,105 @@
     "></div>
 
     <script>
-    // Team-Daten werden aus JSON-Datei geladen
-    let teamData = {};
+    // Team-Daten direkt im Code eingebettet (für GitHub Pages)
+    const teamData = {
+        "owner": [
+            {
+                "name": "D3lN707B9D39",
+                "joinDate": "2023-01-15",
+                "discord": "D3lN707B9D39"
+            }
+        ],
+        "admin": [
+            {
+                "name": "DragonSlayer",
+                "joinDate": "2023-03-10",
+                "discord": "DragonSlayer#9999"
+            },
+            {
+                "name": "MysticGuard",
+                "joinDate": "2023-04-05",
+                "discord": "MysticGuard#1111"
+            },
+            {
+                "name": "ShadowAdmin",
+                "joinDate": "2023-05-20",
+                "discord": "ShadowAdmin#2222"
+            }
+        ],
+        "developer": [
+            {
+                "name": "CodeWizard",
+                "joinDate": "2023-06-01",
+                "discord": "CodeWizard#3333"
+            },
+            {
+                "name": "PluginMaster",
+                "joinDate": "2023-07-15",
+                "discord": "PluginMaster#4444"
+            }
+        ],
+        "builder": [
+            {
+                "name": "WorldCrafter",
+                "joinDate": "2023-08-01",
+                "discord": "WorldCrafter#5555"
+            },
+            {
+                "name": "ArchitectPro",
+                "joinDate": "2023-09-10",
+                "discord": "ArchitectPro#6666"
+            },
+            {
+                "name": "BuildMaster",
+                "joinDate": "2023-10-05",
+                "discord": "BuildMaster#7777"
+            }
+        ],
+        "moderator": [
+            {
+                "name": "ChatGuardian",
+                "joinDate": "2023-11-01",
+                "discord": "ChatGuardian#8888"
+            },
+            {
+                "name": "PeaceKeeper",
+                "joinDate": "2023-12-15",
+                "discord": "PeaceKeeper#9000"
+            }
+        ],
+        "helper": [
+            {
+                "name": "FriendlyHelper",
+                "joinDate": "2024-01-01",
+                "discord": "FriendlyHelper#1010"
+            },
+            {
+                "name": "NewbieFriend",
+                "joinDate": "2024-02-14",
+                "discord": "NewbieFriend#1212"
+            }
+        ],
+        "community_manager": [
+            {
+                "name": "EventOrganizer",
+                "joinDate": "2024-03-01",
+                "discord": "EventOrganizer#1313"
+            }
+        ],
+        "content_creator": [
+            {
+                "name": "VideoMaker",
+                "joinDate": "2024-04-01",
+                "discord": "VideoMaker#1414"
+            },
+            {
+                "name": "ScreenshotPro",
+                "joinDate": "2024-05-01",
+                "discord": "ScreenshotPro#1515"
+            }
+        ]
+    };
 
     // Cursor Glow Effect
     document.addEventListener("mousemove", function(e) {
@@ -196,33 +293,36 @@
         glow.style.top = e.clientY + "px";
     });
 
-    // Rank Card Click Events - Jede Karte separat behandeln
+    // Alle Dropdowns schließen
+    function closeAllDropdowns() {
+        document.querySelectorAll('.rank-card').forEach(card => {
+            const dropdown = card.querySelector('.member-dropdown');
+            const arrow = card.querySelector('.dropdown-arrow');
+            dropdown.style.display = 'none';
+            arrow.innerHTML = '▼';
+        });
+    }
+
+    // Rank Card Click Events - Verbesserte Version
     document.querySelectorAll('.rank-card').forEach(card => {
         card.addEventListener('click', function(e) {
-            e.stopPropagation(); // Verhindert Event-Bubbling
+            e.stopPropagation();
             
             const rank = this.getAttribute('data-rank');
             const dropdown = this.querySelector('.member-dropdown');
             const arrow = this.querySelector('.dropdown-arrow');
             
-            // Schließe alle anderen Dropdowns
-            document.querySelectorAll('.rank-card').forEach(otherCard => {
-                if (otherCard !== this) {
-                    const otherDropdown = otherCard.querySelector('.member-dropdown');
-                    const otherArrow = otherCard.querySelector('.dropdown-arrow');
-                    otherDropdown.style.display = 'none';
-                    otherArrow.innerHTML = '▼';
-                }
-            });
+            // Prüfen ob dieses Dropdown bereits offen ist
+            const isCurrentlyOpen = dropdown.style.display === 'block';
             
-            // Toggle current dropdown
-            if (dropdown.style.display === 'none' || !dropdown.style.display) {
+            // Alle Dropdowns schließen
+            closeAllDropdowns();
+            
+            // Falls das geklickte Dropdown nicht offen war, öffne es
+            if (!isCurrentlyOpen) {
                 loadTeamMembers(rank, dropdown);
                 dropdown.style.display = 'block';
                 arrow.innerHTML = '▲';
-            } else {
-                dropdown.style.display = 'none';
-                arrow.innerHTML = '▼';
             }
         });
 
@@ -236,6 +336,13 @@
             this.style.transform = 'translateY(0) scale(1)';
             this.style.boxShadow = 'none';
         });
+    });
+
+    // Klick außerhalb schließt alle Dropdowns
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.rank-card')) {
+            closeAllDropdowns();
+        }
     });
 
     // Funktion zum Laden der Teammitglieder
@@ -288,37 +395,7 @@
         });
     });
 
-    // Lade Teammitglieder-Daten aus JSON-Datei
-    async function loadTeamDataFromFile() {
-        try {
-            const response = await fetch('team-data.json');
-            if (!response.ok) {
-                throw new Error('JSON-Datei nicht gefunden');
-            }
-            teamData = await response.json();
-            console.log('Team-Daten erfolgreich geladen:', teamData);
-        } catch (error) {
-            console.error('Fehler beim Laden der team-data.json:', error);
-            // Fallback zu Beispieldaten wenn JSON nicht verfügbar
-            teamData = {
-                owner: [
-                    { name: "Beispiel Owner", joinDate: "2023-01-15", discord: "Owner#1234" }
-                ],
-                admin: [
-                    { name: "Beispiel Admin", joinDate: "2023-03-10", discord: "Admin#5678" }
-                ],
-                developer: [],
-                builder: [],
-                moderator: [],
-                helper: [],
-                community_manager: [],
-                content_creator: []
-            };
-        }
-    }
-    
-    // Lade Daten beim Seitenstart
-    loadTeamDataFromFile();
+    console.log('Team-Daten erfolgreich geladen:', teamData);
     </script>
 </body>
 </html>
