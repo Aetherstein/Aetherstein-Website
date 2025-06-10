@@ -8,7 +8,7 @@ const ADMIN_KEY = process.env.ADMIN_KEY;
 
 app.use(express.static(__dirname));
 
-// Zugriffskontrolle
+// Zugriff auf Admin-Seite nur mit richtigem Key
 app.get('/shop-admin.html', (req, res) => {
   if (req.query.admin === ADMIN_KEY) {
     res.sendFile(path.join(__dirname, 'shop-admin.html'));
