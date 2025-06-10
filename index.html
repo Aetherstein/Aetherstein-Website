@@ -60,22 +60,7 @@
       glow.style.left = e.clientX + "px";
       glow.style.top = e.clientY + "px";
     });
-
-      document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = this.getAttribute('href');
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = target;
-      }, 500);
-    });
-  });
-
-  window.addEventListener('pageshow', function () {
-    document.body.classList.remove('fade-out');
-  });
-</script>
+    </script>
     
 </body>
 </html>
