@@ -3,12 +3,20 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Admin-Key aus Umgebungsvariable
 const ADMIN_KEY = process.env.ADMIN_KEY;
 
-app.use(express.static(__dirname));
+// ⚠️ WICHTIG: Datei darf nicht automatisch ausgeliefert werden:
+app.use(express.static(__dirname, {
+  index: 'index.html',
+  // blockiere shop-admin.html
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('shop-admin.html')) {
+      res.status(403).end(); // blockiert direkten Zugriff
+    }
+  }
+}));
 
-// Zugriff auf Admin-Seite nur mit richtigem Key
+// Manuell geschützte Route
 app.get('/shop-admin.html', (req, res) => {
   if (req.query.admin === ADMIN_KEY) {
     res.sendFile(path.join(__dirname, 'shop-admin.html'));
