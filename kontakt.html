@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
-<body>
+<body style="opacity: 0; transition: opacity 0.5s ease;" onload="document.body.style.opacity = 1;">
 
 <nav style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 10px 0; text-align: center; z-index: 999;">
   <a href="index.html" style="color: white; margin: 0 20px; text-decoration: none;">Home</a>
@@ -17,143 +17,157 @@
 </nav>
 <div style="height: 50px;"></div> <!-- Abstand unter der Leiste -->
 
-    <div class="hero">
-        <img src="logo.jpg" alt="Aetherstein Logo" class="logo"/>
-        <h1>AETHERSTEIN</h1>
-        <p class="subtitle">Ein mystisches Reich voller Magie und Legenden</p>
-        <div class="buttons">
-            <a href="https://discord.gg/deinserver" class="btn">Discord beitreten</a>
-            <a href="minecraft://deinserver.de" class="btn">Minecraft Server beitreten</a>
-        </div>
+<div class="hero">
+    <img src="logo.jpg" alt="Aetherstein Logo" class="logo"/>
+    <h1>AETHERSTEIN</h1>
+    <p class="subtitle">Ein mystisches Reich voller Magie und Legenden</p>
+    <div class="buttons">
+        <a href="https://discord.gg/deinserver" class="btn">Discord beitreten</a>
+        <a href="minecraft://deinserver.de" class="btn">Minecraft Server beitreten</a>
     </div>
+</div>
 
-    <main style='padding: 40px; color: white; background: #14171c;'>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #d6cba4;">Kontakt</h1>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">Hast du Fragen, Vorschläge oder möchtest du Teil unseres Teams werden? Kontaktiere uns!</p>
-            
-            <div style="background: rgba(44, 62, 80, 0.3); padding: 40px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);">
-                <form action="https://formspree.io/f/mqabppby" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-                    
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 250px;">
-                            <label for="vorname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Vorname *</label>
-                            <input type="text" id="vorname" name="vorname" required 
-                                   style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
-                        </div>
-                        <div style="flex: 1; min-width: 250px;">
-                            <label for="nachname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Nachname *</label>
-                            <input type="text" id="nachname" name="nachname" required 
-                                   style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">E-Mail Adresse *</label>
-                        <input type="email" id="email" name="email" required 
+<main style='padding: 40px; color: white; background: #14171c;'>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #d6cba4;">Kontakt</h1>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">Hast du Fragen, Vorschläge oder möchtest du Teil unseres Teams werden? Kontaktiere uns!</p>
+        
+        <div style="background: rgba(44, 62, 80, 0.3); padding: 40px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);">
+            <form action="https://formspree.io/f/mqabppby" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+                
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="vorname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Vorname *</label>
+                        <input type="text" id="vorname" name="vorname" required 
                                style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
                     </div>
-
-                    <div>
-                        <label for="minecraft-name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Minecraft Spielername (optional)</label>
-                        <input type="text" id="minecraft-name" name="minecraft-name" 
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="nachname" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Nachname *</label>
+                        <input type="text" id="nachname" name="nachname" required 
                                style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
                     </div>
+                </div>
 
-                    <div>
-                        <label for="betreff" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Betreff *</label>
-                        <select id="betreff" name="betreff" required 
-                                style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px;">
-                            <option value="">Bitte wählen...</option>
-                            <option value="Allgemeine Frage">Allgemeine Frage</option>
-                            <option value="Team Bewerbung">Team Bewerbung</option>
-                            <option value="Bug Report">Bug Report</option>
-                            <option value="Feature Vorschlag">Feature Vorschlag</option>
-                            <option value="Technischer Support">Technischer Support</option>
-                            <option value="Sonstiges">Sonstiges</option>
-                        </select>
-                    </div>
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">E-Mail Adresse *</label>
+                    <input type="email" id="email" name="email" required 
+                           style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
+                </div>
 
-                    <div>
-                        <label for="nachricht" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Nachricht *</label>
-                        <textarea id="nachricht" name="nachricht" rows="6" required 
-                                  style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; resize: vertical; transition: border-color 0.3s ease;" 
-                                  placeholder="Teile uns deine Nachricht mit..."></textarea>
-                    </div>
+                <div>
+                    <label for="minecraft-name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Minecraft Spielername (optional)</label>
+                    <input type="text" id="minecraft-name" name="minecraft-name" 
+                           style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; transition: border-color 0.3s ease;">
+                </div>
 
-                    <button type="submit" 
-                            style="background: linear-gradient(45deg, #2c3e50, #00bcd4); color: white; padding: 15px 40px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
-                        Nachricht senden
-                    </button>
-                </form>
-            </div>
+                <div>
+                    <label for="betreff" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Betreff *</label>
+                    <select id="betreff" name="betreff" required 
+                            style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px;">
+                        <option value="">Bitte wählen...</option>
+                        <option value="Allgemeine Frage">Allgemeine Frage</option>
+                        <option value="Team Bewerbung">Team Bewerbung</option>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feature Vorschlag">Feature Vorschlag</option>
+                        <option value="Technischer Support">Technischer Support</option>
+                        <option value="Sonstiges">Sonstiges</option>
+                    </select>
+                </div>
 
-            <div style="margin-top: 40px; text-align: center;">
-                <h3 style="color: #d6cba4; margin-bottom: 20px;">Alternative Kontaktmöglichkeiten</h3>
-                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                    <div style="background: rgba(44, 62, 80, 0.2); padding: 20px; border-radius: 10px; min-width: 200px;">
-                        <h4 style="color: #00bcd4; margin-bottom: 10px;">Discord</h4>
-                        <a href="https://discord.gg/deinserver" style="color: #d6cba4; text-decoration: none;">Server beitreten</a>
-                    </div>
-                    <div style="background: rgba(44, 62, 80, 0.2); padding: 20px; border-radius: 10px; min-width: 200px;">
-                        <h4 style="color: #00bcd4; margin-bottom: 10px;">E-Mail</h4>
-                        <p style="color: #d6cba4; margin: 0;">aetherstein.mail@gmail.com</p>
-                    </div>
+                <div>
+                    <label for="nachricht" style="display: block; margin-bottom: 8px; font-weight: bold; color: #d6cba4;">Nachricht *</label>
+                    <textarea id="nachricht" name="nachricht" rows="6" required 
+                              style="width: 100%; padding: 12px; border: 2px solid #2c3e50; border-radius: 8px; background: rgba(20, 23, 28, 0.8); color: white; font-size: 16px; resize: vertical; transition: border-color 0.3s ease;" 
+                              placeholder="Teile uns deine Nachricht mit..."></textarea>
+                </div>
+
+                <button type="submit" 
+                        style="background: linear-gradient(45deg, #2c3e50, #00bcd4); color: white; padding: 15px 40px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                    Nachricht senden
+                </button>
+            </form>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <h3 style="color: #d6cba4; margin-bottom: 20px;">Alternative Kontaktmöglichkeiten</h3>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="background: rgba(44, 62, 80, 0.2); padding: 20px; border-radius: 10px; min-width: 200px;">
+                    <h4 style="color: #00bcd4; margin-bottom: 10px;">Discord</h4>
+                    <a href="https://discord.gg/deinserver" style="color: #d6cba4; text-decoration: none;">Server beitreten</a>
+                </div>
+                <div style="background: rgba(44, 62, 80, 0.2); padding: 20px; border-radius: 10px; min-width: 200px;">
+                    <h4 style="color: #00bcd4; margin-bottom: 10px;">E-Mail</h4>
+                    <p style="color: #d6cba4; margin: 0;">aetherstein.mail@gmail.com</p>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <p>© 2025 Aetherstein Serverprojekt</p>
-    </footer>
+<footer>
+    <p>© 2025 Aetherstein Serverprojekt</p>
+</footer>
 
-    <!-- EINZIGES Glow-Element -->
-    <div id="cursor-glow" style="
-      position: fixed;
-      width: 35px;
-      height: 35px;
-      background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      mix-blend-mode: screen;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-    "></div>
+<div id="cursor-glow" style="
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+"></div>
 
-    <!-- EINZIGES korrektes JS -->
-    <script>
-    document.addEventListener("mousemove", function(e) {
-      const glow = document.getElementById("cursor-glow");
-      glow.style.left = e.clientX + "px";
-      glow.style.top = e.clientY + "px";
+<script>
+  // Cursor Glow
+  document.addEventListener("mousemove", function(e) {
+    const glow = document.getElementById("cursor-glow");
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+  });
+
+  // Form Input Focus Styling
+  const inputs = document.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+          this.style.borderColor = '#00bcd4';
+          this.style.boxShadow = '0 0 10px rgba(0, 188, 212, 0.3)';
+      });
+      input.addEventListener('blur', function() {
+          this.style.borderColor = '#2c3e50';
+          this.style.boxShadow = 'none';
+      });
+  });
+
+  // Button Hover Effekt
+  const submitBtn = document.querySelector('button[type="submit"]');
+  submitBtn.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-2px)';
+      this.style.boxShadow = '0 5px 15px rgba(0, 188, 212, 0.4)';
+  });
+  submitBtn.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+      this.style.boxShadow = 'none';
+  });
+
+  // Seitenwechsel Fade Effekt
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = this.getAttribute('href');
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = target;
+      }, 500);
     });
+  });
 
-    // Form styling improvements
-    const inputs = document.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.borderColor = '#00bcd4';
-            this.style.boxShadow = '0 0 10px rgba(0, 188, 212, 0.3)';
-        });
-        
-        input.addEventListener('blur', function() {
-            this.style.borderColor = '#2c3e50';
-            this.style.boxShadow = 'none';
-        });
-    });
+  window.addEventListener('pageshow', function () {
+    document.body.classList.remove('fade-out');
+  });
+</script>
 
-    // Button hover effect
-    const submitBtn = document.querySelector('button[type="submit"]');
-    submitBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 5px 15px rgba(0, 188, 212, 0.4)';
-    });
-    
-    submitBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = 'none';
-    });
-    </script>
 </body>
 </html>
