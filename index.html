@@ -9,7 +9,8 @@
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="https://raw.githubusercontent.com/Aetherstein/Aetherstein-Website/main/favicon.png" type="image/png" sizes="32x32">
 </head>
-<body>
+
+<body style="opacity: 0; transition: opacity 0.5s ease;" onload="document.body.style.opacity = 1;">
 
 <nav style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 10px 0; text-align: center; z-index: 999;">
   <a href="index.html" style="color: white; margin: 0 20px; text-decoration: none;">Home</a>
@@ -53,14 +54,31 @@
       z-index: 9999;
     "></div>
 
-    <!-- EINZIGES korrektes JS -->
+    <!-- Skripte -->
     <script>
+    // Maus-Glow
     document.addEventListener("mousemove", function(e) {
       const glow = document.getElementById("cursor-glow");
       glow.style.left = e.clientX + "px";
       glow.style.top = e.clientY + "px";
     });
+
+    // Seitenwechsel Fade Effekt
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500);
+      });
+    });
+
+    // Zurück aus dem Cache verhindern
+    window.addEventListener('pageshow', function () {
+      document.body.classList.remove('fade-out');
+    });
     </script>
-    
 </body>
 </html>
