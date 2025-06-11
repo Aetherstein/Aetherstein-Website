@@ -1,9 +1,9 @@
 [
     {
         "id": "1",
-        "name": "heyy",
+        "name": "testo",
         "price": 100.0,
-        "description": "test",
-        "created_at": "2025-06-12T00:48:08.785137"
+        "description": "nein",
+        "created_at": "2025-06-12T00:59:44.821456"
     }
 ]
