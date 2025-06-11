@@ -1,9 +1,10 @@
 [
     {
         "id": "1",
-        "name": "testo",
+        "name": "skin",
         "price": 100.0,
-        "description": "nein",
-        "created_at": "2025-06-12T00:59:44.821456"
+        "image_url": "C:/Users/gta-m/Documents/KrSPeK-Skin.png",
+        "description": "ein skin",
+        "created_at": "2025-06-12T01:09:51.058281"
     }
 ]
