@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "20250612_182507",
+    "name": "test",
+    "price": "100k",
+    "image_url": "https://raw.githubusercontent.com/Aetherstein/Aetherstein-Website/main/images/product_20250612_182502.png",
+    "description": "test",
+    "created_at": "2025-06-12T18:25:10.329241"
+  }
+]
