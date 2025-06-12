@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "id": "1",
+        "name": "Teest",
+        "price": 100.0,
+        "image_url": "https://raw.githubusercontent.com/Aetherstein/Aetherstein-Website/main/product_20250612_144555.png",
+        "description": "ne",
+        "created_at": "2025-06-12T14:46:02.405882"
+    }
+]
